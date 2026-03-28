@@ -67,7 +67,7 @@ DATABASES = {
         'USER': os.environ.get("MYSQL_USER"),
         'PASSWORD': os.environ.get("MYSQL_PASSWORD"),
         'HOST': os.environ.get("MYSQL_HOST"),  # You can use a different host if your MySQL server is on a remote machine.
-        'PORT': os.environ.get("MYSQL_PORT"),  # Leave this empty to use the default MySQL port (3306).
+        'PORT': os.environ.get("PORT"),  # Leave this empty to use the default MySQL port (3306).
     }
 }
 
