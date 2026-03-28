@@ -29,7 +29,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.mysql
-    container_name: ${HOST}
+    container_name: "${HOST}"
     ports:
       - "${PORT}:${PORT}"
     volumes:
