@@ -15,11 +15,11 @@ services:
     environment:
       - MYSQL_ENGINE="${ENGINE}"
       - MYSQL_HOST="${HOST}"
-      - MYSQL_ROOT_PASSWORD=${ROOT_PASSWORD}
-      - MYSQL_DATABASE=${NAME}
-      - MYSQL_USER=${USER}
-      - MYSQL_PASSWORD=${PASSWORD}
-      - MYSQL_PORT=${MYSQL_PORT}
+      - MYSQL_ROOT_PASSWORD="${ROOT_PASSWORD}"
+      - MYSQL_DATABASE="${NAME}"
+      - MYSQL_USER="${USER}"
+      - MYSQL_PASSWORD="${PASSWORD}"
+      - MYSQL_PORT="${PORT}"
     depends_on:
       mysql:
         condition: service_healthy
@@ -31,7 +31,7 @@ services:
       dockerfile: Dockerfile.mysql
     container_name: ${HOST}
     ports:
-      - "${MYSQL_PORT}:${MYSQL_PORT}"
+      - "${PORT}:${PORT}"
     volumes:
       - db-data:/var/lib/mysql
     networks:
@@ -42,9 +42,9 @@ services:
       timeout: 5s
       retries: 5
     environment:
-      - MYSQL_ROOT_PASSWORD=${ROOT_PASSWORD}
-      - MYSQL_DATABASE=${NAME}
-      - MYSQL_USER=${USER}
-      - MYSQL_PASSWORD=${PASSWORD}
+      - MYSQL_ROOT_PASSWORD="${ROOT_PASSWORD}"
+      - MYSQL_DATABASE="${NAME}"
+      - MYSQL_USER="${USER}"
+      - MYSQL_PASSWORD="${PASSWORD}"
 volumes:
   db-data:
